@@ -5,7 +5,7 @@ import './App.css';
 // import {Footer} from "./site/Footer";
 // import {NewComponent} from "./NewComponent";
 // import {log} from "util";
-import {Button} from "./components/Button";
+// import {Button} from "./components/Button";
 
 function App() {
     // const [students, setStudents] = useState([
@@ -36,9 +36,9 @@ function App() {
     //     )
     // }
     //
-    const onClickHandler = (name: string) => {
-        console.log(name)
-    }
+    // const onClickHandler = (name: string) => {
+    //     console.log(name)
+    // }
 
 
     // const foo1 = () => {
@@ -49,18 +49,25 @@ function App() {
     //     console.log(num)
     // }
 
-    const Button1Foo = (subscriber: string, age: number, address: string) => {
-        console.log(subscriber, age, address)
-    }
+    // const Button1Foo = (subscriber: string, age: number, address: string) => {
+    //     console.log(subscriber, age, address)
+    // }
+    //
+    // const Button2Foo = (subscriber: string) => {
+    //     console.log(subscriber)
+    // }
+    //
+    // const Button3Foo = (title: string) => {
+    //     console.log(title)
+    // }
 
-    const Button2Foo = (subscriber: string) => {
-        console.log(subscriber)
+    let [a, setA] = useState(1)
+    const onClickHandler = () => {
+        setA(++a)
     }
-
-    const Button3Foo = (title: string) => {
-        console.log(title)
+    const onClickHandler2 = () => {
+        setA(0)
     }
-
     return (
         <>
             {/*<Header title={'New header'}/>*/}
@@ -74,10 +81,12 @@ function App() {
             {/*<button onClick={foo1}>1</button>*/}
             {/*<button onClick={() => foo2(100200)}>2</button>*/}
 
-            <Button name={'MyYoutubeChanel-1'} callBack={() => Button1Foo('Vasya', 21, 'live in Moscow')}/>
-            <Button name={'MyYoutubeChanel-2'} callBack={() => Button2Foo('Artem')}/>
-            <Button name={'Stupid Button'} callBack={() => Button3Foo('Im stupid button')}/>
-
+            {/*<Button name={'MyYoutubeChanel-1'} callBack={() => Button1Foo('Vasya', 21, 'live in Moscow')}/>*/}
+            {/*<Button name={'MyYoutubeChanel-2'} callBack={() => Button2Foo('Artem')}/>*/}
+            {/*<Button name={'Stupid Button'} callBack={() => Button3Foo('Im stupid button')}/>*/}
+            <h1>{a}</h1>
+            <button onClick={onClickHandler}>Number</button>
+            <button onClick={onClickHandler2}>0</button>
         </>
     )
 }
